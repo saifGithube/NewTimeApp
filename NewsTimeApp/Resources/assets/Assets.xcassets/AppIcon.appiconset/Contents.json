@@ -1,0 +1,14 @@
+{
+  "images" : [
+    {
+      "filename" : "5728196_app_follow_mobile_news_read_icon.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
