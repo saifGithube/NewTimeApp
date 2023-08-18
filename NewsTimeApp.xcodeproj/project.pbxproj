@@ -132,7 +132,6 @@
 				B0857CCD2A8BBA42000DCA67 /* Models */,
 				B0857CD42A8BBC03000DCA67 /* ModelView */,
 				B0857CD22A8BBA90000DCA67 /* ViewController */,
-				B0857CD12A8BBA87000DCA67 /* View */,
 				B0857CD02A8BBA7F000DCA67 /* Utils */,
 				B0857CCF2A8BBA67000DCA67 /* Service */,
 				B0857CCE2A8BBA5E000DCA67 /* Resources */,
@@ -200,13 +199,6 @@
 				B0857CD92A8BC02D000DCA67 /* modelsErrors.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		B0857CD12A8BBA87000DCA67 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B0857CD22A8BBA90000DCA67 /* ViewController */ = {

@@ -34,3 +34,13 @@ struct Source: Codable {
     let id: String?
     let name: String?
 }
+
+
+
+enum Result<Success, Failure: Error> {
+    case success(Success)
+    case failure(Failure)
+}
+
+
+

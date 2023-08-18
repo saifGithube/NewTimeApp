@@ -18,22 +18,7 @@ class NewsViewModel {
             self.apiService = APIService()
             getNews()
         }
-//    init(news: NewsModel) {
-//        self.apiService = APIService()
-//        getNews()
-//    }
-    
-//    var status: String {
-//        return news?.status ?? ""
-//    }
-//
-//    var totalResults: Int {
-//        return news?.totalResults ?? 0
-//    }
-//
-//    var articles : [Article]{
-//        return news?.articles ?? []
-//    }
+
     
     private(set) var newsData : NewsModel! {
            didSet {
@@ -43,8 +28,17 @@ class NewsViewModel {
     
     
     func getNews(){
-        self.apiService.apiToGetNewsData {(newsData) in
-            self.newsData = newsData
+        self.apiService.apiToGetNewsData {(result) in
+            
+            switch result {
+                case .success(let newsModel):
+                    // Handle the successful case with the newsModel
+                    print("Received news:", result)
+                self.newsData = newsModel
+                case .failure(let errorModel):
+                    print("Error:", errorModel)
+                }
+            
         }
     }
 }

@@ -19,6 +19,7 @@ class NewsListViewController: UIViewController {
         addjustTheTableView()
         callToViewModelForUIUpdate()
         self.view.backgroundColor = UIColor.blackColor
+
         // Do any additional setup after loading the view.
     }
     
@@ -51,7 +52,8 @@ class NewsListViewController: UIViewController {
     }
 
     func callToViewModelForUIUpdate(){
-        
+        let loader =   self.loader()
+
         self.newsViewModel =  NewsViewModel()
         self.newsViewModel.bindNewsViewModelToController = {
             self.articles = self.newsViewModel.newsData.articles
@@ -60,12 +62,17 @@ class NewsListViewController: UIViewController {
                 self.newsTableView.delegate = self
                 
                 self.newsTableView.register(NewsListTableViewCell.self, forCellReuseIdentifier: "NewsListTableViewCell")
+                self.newsTableView.reloadData()
+                self.stopLoader(loader: loader)
 
-                 self.newsTableView.reloadData()
+                self.stopLoader(loader: loader)
+                
+
             }
         }
     }
-    
 }
+
+
 
 

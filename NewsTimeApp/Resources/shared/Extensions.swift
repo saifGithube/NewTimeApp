@@ -37,6 +37,41 @@ extension UITapGestureRecognizer {
 }
 
 
+extension NewsListViewController {
+    
+    func loader() -> UIAlertController {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.style = UIActivityIndicatorView.Style.large
+            loadingIndicator.startAnimating()
+            alert.view.addSubview(loadingIndicator)
+            present(alert, animated: true, completion: nil)
+            return alert
+        }
+        
+        func stopLoader(loader : UIAlertController) {
+            DispatchQueue.main.async {
+                loader.dismiss(animated: true, completion: nil)
+            }
+        }
+    
+    func showErrorAlert(message: String) {
+           let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+           let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+               self.showErrorAlert(message: "Failed to load data. Please try again later.")
 
+               // Handle retry action here
+           }
+           alert.addAction(retryAction)
+           
+           let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel) { _ in
+               // Handle dismiss action here
+           }
+           alert.addAction(dismissAction)
+
+           present(alert, animated: true, completion: nil)
+       }
+}
 
 
