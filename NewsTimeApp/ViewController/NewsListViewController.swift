@@ -55,16 +55,28 @@ class NewsListViewController: UIViewController {
         let loader =   self.loader()
 
         self.newsViewModel =  NewsViewModel()
+        self.stopLoader(loader: loader)
+
+        
+        self.newsViewModel.bindNewsErrorViewModelToController = {
+            
+            
+            DispatchQueue.main.async {
+                ErrorManger.shared.showAlert(title:"Error" , message: self.newsViewModel.newsErrorData.error ?? "", viewController: self)
+
+            }
+        }
         self.newsViewModel.bindNewsViewModelToController = {
+        
+            
             self.articles = self.newsViewModel.newsData.articles
+           
             DispatchQueue.main.async {
                 self.newsTableView.dataSource = self
                 self.newsTableView.delegate = self
                 
                 self.newsTableView.register(NewsListTableViewCell.self, forCellReuseIdentifier: "NewsListTableViewCell")
                 self.newsTableView.reloadData()
-                self.stopLoader(loader: loader)
-
                 self.stopLoader(loader: loader)
                 
 
