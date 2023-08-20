@@ -32,6 +32,7 @@ class NewsListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    // add the table View here
     func addjustTheTableView(){
         newsTableView  = UITableView(frame: view.bounds , style: .plain)
     
@@ -51,13 +52,13 @@ class NewsListViewController: UIViewController {
         
     }
 
+    // update the UI of ViewController after run the ViewModel
     func callToViewModelForUIUpdate(){
         let loader =   self.loader()
 
         self.newsViewModel =  NewsViewModel()
         self.stopLoader(loader: loader)
 
-        
         self.newsViewModel.bindNewsErrorViewModelToController = {
             
             

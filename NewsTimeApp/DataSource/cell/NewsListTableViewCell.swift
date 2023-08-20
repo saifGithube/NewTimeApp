@@ -10,6 +10,8 @@ import Foundation
 
 import UIKit
 
+// creating of tableView cell here
+// this table view has the title and the image to desplay from ws
 class NewsListTableViewCell: UITableViewCell {
 
     private let backView: UIView = {
@@ -67,9 +69,14 @@ class NewsListTableViewCell: UITableViewCell {
     func configure(article  :  Article?) {
         titleLabel.text = article?.title
         if  var url = article?.urlToImage {
-            ImageManager.setImage(&url, targetImageView: newsImageView)
-        }else{
-            newsImageView.image = UIImage(named: "default")
+            
+           
+            if url == ""{
+                    newsImageView.image = UIImage(named: "default")
+                
+            }else{
+                ImageManager.setImage(&url, targetImageView: newsImageView)
+            }
         }
     }
     

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// ViewModel for details page
 class NewsDetailViewModel {
     var article: Article
     

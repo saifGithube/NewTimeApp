@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// extension to create tableView delegate and data source from NewsListViewController
 extension NewsListViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
@@ -30,7 +31,7 @@ extension NewsListViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         
-        let detailViewModel = NewsDetailViewModel(article: articles[indexPath.row])
+        let detailViewModel = NewsDetailViewModel(article: articles[indexPath.row] ?? articles[0])
 
         let detailVC = NewsDetailsViewController()
         detailVC.newDetailsViewModel = detailViewModel

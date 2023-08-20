@@ -7,6 +7,7 @@
 
 import UIKit
 
+    // details page ViewController
 class NewsDetailsViewController: UIViewController {
 
 
@@ -44,6 +45,15 @@ class NewsDetailsViewController: UIViewController {
             return imageView
         }()
     
+    private let detailsLabel : UILabel  = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "For more details click here :"
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,16 +64,8 @@ class NewsDetailsViewController: UIViewController {
     }
 
     private func setNavBar(){
-        // Create a custom back button
-        // Customize navigation bar appearance
-//        navigationController?.navigationBar.tintColor = .white // Set the color of the back button icon
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(named: ImageManager.custom_back_button_white), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.isTranslucent = true
-//
-//                // Hide the default back button title
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-//
+
+        
         let backButtonImage = UIImage(named: ImageManager.custom_back_button_white)?.withRenderingMode(.alwaysOriginal)
                 navigationItem.leftBarButtonItem = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(backButtonTapped))
                 
@@ -100,6 +102,7 @@ class NewsDetailsViewController: UIViewController {
         
         
           view.addSubview(titleLabel)
+          view.addSubview(detailsLabel)
           view.addSubview(descriptionLabel)
           view.addSubview(sourceLabel)
           view.addSubview(imageView)
@@ -130,7 +133,8 @@ class NewsDetailsViewController: UIViewController {
     
     private func populateUI() {
          titleLabel.text = newDetailsViewModel.title
-         descriptionLabel.text = newDetailsViewModel.description + "\n\n Click link for details:"
+         descriptionLabel.text = newDetailsViewModel.description
+        
          sourceLabel.text = newDetailsViewModel.source
          
         if var url = newDetailsViewModel?.imageURL {
@@ -161,7 +165,14 @@ class NewsDetailsViewController: UIViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            sourceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
+            
+            
+            detailsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            detailsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            detailsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            
+            sourceLabel.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 10),
             sourceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             sourceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])

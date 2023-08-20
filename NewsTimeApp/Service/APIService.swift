@@ -13,7 +13,7 @@ public final class APIService {
 
     private let apiKey = "fb52d3d0c501459eabbb1418a7f3c4bb"
     private var sourcesURL: URL {
-        var components = URLComponents(string: "https://newsapi.org/v2/everything")!
+        var components = URLComponents(string: Constants.URL)!
         components.queryItems = [
             URLQueryItem(name: "q", value: "tesla"),
             URLQueryItem(name: "sortBy", value: "publishedAt"),

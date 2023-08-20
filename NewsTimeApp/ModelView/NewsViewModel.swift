@@ -7,13 +7,15 @@
 
 import Foundation
 
+// MARK: - NewsViewModel  class for the newCall
 class NewsViewModel {
     var news: NewsModel?
     private var apiService : APIService!
-
+   // in case of error we perform this action
     var onError: ((NewsModelError) -> Void)?
-
+    // bind the data to the ViewConrtroller
     var bindNewsViewModelToController : (() -> ()) = {}
+    // bind and send the error data to the viewController
     var bindNewsErrorViewModelToController : (() -> ()) = {}
 
     
@@ -49,7 +51,6 @@ class NewsViewModel {
                 self.onError?(errorModel)
                 self.newsErrorData = errorModel
                 print("error Models :",errorModel)
-                    print("Error:", errorModel)
                 
                 }
             
