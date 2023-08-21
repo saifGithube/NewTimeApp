@@ -15,8 +15,13 @@ final class NewsTimeAppTests: XCTestCase {
     var newsListViewController: NewsListViewController!
     var newsDetailsViewController: NewsDetailsViewController!
     var newsDetailViewModel : NewsDetailViewModel!
-
     var articles : [Article] = []
+    
+    
+    override func setUp()  {
+        super.setUp()
+        newsViewModel = NewsViewModel()
+    }
     
     override func setUpWithError() throws {
         // Set up your view controller and table view here
@@ -25,9 +30,7 @@ final class NewsTimeAppTests: XCTestCase {
         tableView = newsListViewController.newsTableView
         newsViewModel = newsListViewController.newsViewModel
         newsListViewController.loadViewIfNeeded()
-        self.articles = newsListViewController.newsViewModel.newsData.articles ?? []
         
-
 
     }
         
@@ -50,7 +53,7 @@ final class NewsTimeAppTests: XCTestCase {
             listViewController.newsTableView = mockTableView
 
             
-            XCTAssertEqual(numberOfRows,self.articles.count )
+            XCTAssertEqual(numberOfRows,newsViewModel.numberOfItems() )
            
         }
         
@@ -113,7 +116,7 @@ final class NewsTimeAppTests: XCTestCase {
         let tableView = newsListViewController.newsTableView
             
         let cells = tableView?.visibleCells.count
-        let expectedCellCount = newsViewModel.newsData.articles.count
+        let expectedCellCount = newsViewModel.numberOfItems()
             
             XCTAssertEqual(cells, expectedCellCount, "Table view has incorrect number of cells")
         }
@@ -125,7 +128,13 @@ final class NewsTimeAppTests: XCTestCase {
         
     }
     
-    
+    func test_item_atIndex() {
+
+           let article = newsViewModel.item(at: 0)
+           XCTAssertNotNil(article)
+        XCTAssertEqual(article?.title, self.newsViewModel.newsData.articles[0].title)
+       }
+
 }
 
 

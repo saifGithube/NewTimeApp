@@ -56,4 +56,15 @@ class NewsViewModel {
             
         }
     }
+    
+    func numberOfItems() -> Int {
+        return self.newsData.articles.count
+        }
+    
+    func item(at index: Int) -> Article? {
+           guard index >= 0 && index < numberOfItems() else {
+               return nil
+           }
+           return self.newsData.articles[index]
+       }
 }

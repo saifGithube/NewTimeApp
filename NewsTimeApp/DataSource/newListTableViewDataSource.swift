@@ -30,8 +30,7 @@ extension NewsListViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        
-        let detailViewModel = NewsDetailViewModel(article: articles[indexPath.row] ?? articles[0])
+        let detailViewModel = NewsDetailViewModel(article: articles[indexPath.row] )
 
         let detailVC = NewsDetailsViewController()
         detailVC.newDetailsViewModel = detailViewModel
@@ -40,8 +39,9 @@ extension NewsListViewController : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
-        headerView.backgroundColor = UIColor.blackColor // Set your desired header background color
+        headerView.backgroundColor = UIColor.blackColor
         
         let titleLabel = UILabel()
         titleLabel.text = "\(DateManager.getDateOfToday())"
@@ -62,7 +62,7 @@ extension NewsListViewController : UITableViewDelegate,UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0 // Set the desired header height
+        return 40.0
     }
 }
 

@@ -61,14 +61,12 @@ class NewsListViewController: UIViewController {
 
         self.newsViewModel.bindNewsErrorViewModelToController = {
             
-            
             DispatchQueue.main.async {
                 ErrorManger.shared.showAlert(title:"Error" , message: self.newsViewModel.newsErrorData.error ?? "", viewController: self)
 
             }
         }
         self.newsViewModel.bindNewsViewModelToController = {
-        
             
             self.articles = self.newsViewModel.newsData.articles
            
@@ -78,8 +76,6 @@ class NewsListViewController: UIViewController {
                 
                 self.newsTableView.register(NewsListTableViewCell.self, forCellReuseIdentifier: "NewsListTableViewCell")
                 self.newsTableView.reloadData()
-                self.stopLoader(loader: loader)
-                
 
             }
         }
