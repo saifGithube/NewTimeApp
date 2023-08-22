@@ -30,6 +30,7 @@ Ou bien, sur l'application desktop de GitHub, téléchargez le fichier .zip de c
 - J'ai créé cette application par programmation, pas besoin d'utiliser le story board
 - Je n'ai pas utilisé RxSwift pour l'architecture MVVM car je ne l'utilise que pour les gros projets (programmation réactive)
 - Je n'ai pas utilisé de tiers, je crée moi-même la fonction à partir de zéro
+- Je decide d'utiliser que le programming et pas des interfaces graphique pour meilleur performance
   
 ## Les problèmes que vous n’avez peut-être pas traités, mais que vous avez identifiés:
 - Je n'ai pas fait tous les tests unitaires.

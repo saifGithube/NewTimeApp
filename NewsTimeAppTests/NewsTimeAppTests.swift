@@ -41,6 +41,10 @@ final class NewsTimeAppTests: XCTestCase {
         }
         
         // Test the number of rows in the table view
+    
+    
+    
+    
         func test_number_of_rows_in_section() {
         
             let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
@@ -139,38 +143,4 @@ final class NewsTimeAppTests: XCTestCase {
 
 
 
-class NewsDetailsViewControllerTests: XCTestCase {
 
-    func testCellTapAndDetails() {
-        // Create an instance of your NewsListViewController
-        let listViewController = NewsListViewController() // Replace with your actual view controller
-        
-        // Create a mock navigation controller to capture pushed view controllers
-        let mockNavController = MockNavigationController(rootViewController: listViewController)
-        
-        UIApplication.shared.keyWindow?.rootViewController = mockNavController
-        
-        let indexPathToTap = IndexPath(row: 0, section: 0)
-        
-        listViewController.tableView(listViewController.newsTableView ?? UITableView(), didSelectRowAt: indexPathToTap)
-                                     
-        
-        XCTAssertTrue(mockNavController.pushedViewController is NewsDetailsViewController)
-        
-        let detailsViewController = mockNavController.pushedViewController as! NewsDetailsViewController
-        
-        
-        XCTAssertEqual(detailsViewController.article.title, mockNavController.title)
-        XCTAssertEqual(detailsViewController.article.description, mockNavController.description)
-    }
-}
-
-
-class MockNavigationController: UINavigationController {
-    var pushedViewController: UIViewController?
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        pushedViewController = viewController
-        super.pushViewController(viewController, animated: animated)
-    }
-}

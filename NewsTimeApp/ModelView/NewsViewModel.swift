@@ -45,7 +45,6 @@ class NewsViewModel {
             switch result {
                 case .success(let newsModel):
                     // Handle the successful case with the newsModel
-                    print("Received news:", result)
                 self.newsData = newsModel
                 case .failure(let errorModel):
                 self.onError?(errorModel)

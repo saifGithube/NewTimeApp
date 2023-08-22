@@ -56,22 +56,6 @@ extension NewsListViewController {
             }
         }
     
-    func showErrorAlert(message: String) {
-           let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-           let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
-               self.showErrorAlert(message: "Failed to load data. Please try again later.")
-
-               // Handle retry action here
-           }
-           alert.addAction(retryAction)
-           
-           let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel) { _ in
-               // Handle dismiss action here
-           }
-           alert.addAction(dismissAction)
-
-           present(alert, animated: true, completion: nil)
-       }
 }
 
 

@@ -18,7 +18,6 @@ class ErrorManger {
            viewController.present(alert, animated: true, completion: nil)
        }
     
-    
 }
 
 
