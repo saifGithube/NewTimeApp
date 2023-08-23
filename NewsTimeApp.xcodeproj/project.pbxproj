@@ -34,6 +34,8 @@
 		B0BC1B272A9244DB00C89B8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BC1B262A9244DB00C89B8A /* Constants.swift */; };
 		B0BC1B2A2A94B36600C89B8A /* APIServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BC1B292A94B36600C89B8A /* APIServiceTest.swift */; };
 		B0BC1B2C2A94B7A900C89B8A /* NewsDetailsTimeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BC1B2B2A94B7A900C89B8A /* NewsDetailsTimeAppTests.swift */; };
+		B0E6FD1E2A963C8800B267F1 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6FD1D2A963C8800B267F1 /* NavigationManager.swift */; };
+		B0E6FD202A963CC100B267F1 /* StoryBoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6FD1F2A963CC100B267F1 /* StoryBoardManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		B0BC1B262A9244DB00C89B8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0BC1B292A94B36600C89B8A /* APIServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTest.swift; sourceTree = "<group>"; };
 		B0BC1B2B2A94B7A900C89B8A /* NewsDetailsTimeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsTimeAppTests.swift; sourceTree = "<group>"; };
+		B0E6FD1D2A963C8800B267F1 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		B0E6FD1F2A963CC100B267F1 /* StoryBoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 		B0857CCC2A8BBA3C000DCA67 /* config */ = {
 			isa = PBXGroup;
 			children = (
+				B0E6FD1D2A963C8800B267F1 /* NavigationManager.swift */,
+				B0E6FD1F2A963CC100B267F1 /* StoryBoardManager.swift */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				B0857CE72A8CD224000DCA67 /* NewsDetailsViewModel.swift in Sources */,
 				B0A4A7D32A8D0DF90000D0EC /* NewsListTableViewDataSource.swift in Sources */,
 				B0A4A7D82A8D18FC0000D0EC /* Images.swift in Sources */,
+				B0E6FD1E2A963C8800B267F1 /* NavigationManager.swift in Sources */,
 				B0857CDA2A8BC02D000DCA67 /* modelsErrors.swift in Sources */,
 				B0857C9B2A8BB9EE000DCA67 /* SceneDelegate.swift in Sources */,
 				B0857CE32A8CD0CE000DCA67 /* NewsDetailsViewController.swift in Sources */,
@@ -442,6 +449,7 @@
 				B0857CD62A8BBC21000DCA67 /* NewsModel.swift in Sources */,
 				B0BC1B242A922F5100C89B8A /* ErrorManger.swift in Sources */,
 				B0A4A7D62A8D0E570000D0EC /* NewsListTableViewCell.swift in Sources */,
+				B0E6FD202A963CC100B267F1 /* StoryBoardManager.swift in Sources */,
 				B0BC1B272A9244DB00C89B8A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

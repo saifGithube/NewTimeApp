@@ -11,7 +11,7 @@ import XCTest
 
 class NewsDetailsViewControllerTests: XCTestCase {
 
-    func testCellTapAndDetails() {
+    func test_cell_tap_and_details() {
         // Create an instance of your NewsListViewController
         let listViewController = NewsListViewController() // Replace with your actual view controller
         
