@@ -20,7 +20,6 @@ class NewsViewModel : ObservableObject{
     var bindNewsErrorViewModelToController : (() -> ()) = {}
 
     
-    
     init(apiService : NewsServiceModelDelegate = APIService()) {
         self.apiService = apiService
             getNews()
@@ -61,7 +60,7 @@ class NewsViewModel : ObservableObject{
     
     func numberOfItems() -> Int? {
         
-            return self.newsData.articles.count
+            return self.news.articles.count
       
         }
     

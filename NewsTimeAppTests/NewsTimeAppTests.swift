@@ -29,7 +29,7 @@ final class NewsTimeAppTests: XCTestCase {
     override func setUpWithError() throws {
         // Set up your view controller and table view here
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+        self.newsViewModel = NewsViewModel()
         newsViewModel.getNews()
         newsListViewController = storyboard.instantiateViewController(withIdentifier: "NewsListViewController") as? NewsListViewController
         tableView = newsListViewController.newsTableView

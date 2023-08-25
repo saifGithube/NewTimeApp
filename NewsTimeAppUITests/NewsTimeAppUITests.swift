@@ -47,7 +47,8 @@ final class NewsTimeAppUITests: XCTestCase {
     
     func testTapCellToNavigate() throws {
            // Assuming you have a cell with an identifier "newsCell"
-           let cell = app.tables.cells["NewsListTableViewCell"].firstMatch
+        let cell = app.tables.cells["NewsListTableViewCell"].firstMatch
+        
            XCTAssertTrue(cell.waitForExistence(timeout: 5), "News cell not found")
 
            cell.tap()

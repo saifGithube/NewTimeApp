@@ -16,10 +16,12 @@ class NewsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.newsViewModel = NewsViewModel()
         addjustTheTableView()
         callToViewModelForUIUpdate()
         self.view.backgroundColor = UIColor.blackColor
 
+        
         // Do any additional setup after loading the view.
     }
     
