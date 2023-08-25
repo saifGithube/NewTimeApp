@@ -8,7 +8,8 @@
 import Foundation
 
 // MARK: - NewsViewModel  class for the newCall
-class NewsViewModel {
+class NewsViewModel : ObservableObject{
+    
     @Published var news: NewsModel!
     private var apiService : APIService!
    // in case of error we perform this action

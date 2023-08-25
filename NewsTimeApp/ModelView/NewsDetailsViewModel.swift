@@ -8,7 +8,7 @@
 import Foundation
 
 // ViewModel for details page
-class NewsDetailViewModel {
+class NewsDetailViewModel : ObservableObject {
     var article: Article
     
     init(article: Article) {

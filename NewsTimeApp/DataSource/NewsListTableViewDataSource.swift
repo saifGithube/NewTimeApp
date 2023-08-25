@@ -30,10 +30,11 @@ extension NewsListViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        let detailViewModel = NewsDetailViewModel(article: newsViewModel.news.articles[indexPath.row] )
 
         let detailVC = NewsDetailsViewController()
+        let detailViewModel = NewsDetailViewModel(article: newsViewModel.news.articles[indexPath.row] )
         detailVC.newDetailsViewModel = detailViewModel
+        
         navigationController?.pushViewController(detailVC, animated: true)
 
     }
