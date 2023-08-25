@@ -23,6 +23,8 @@ final class NewsTimeAppTests: XCTestCase {
         newsViewModel = NewsViewModel()
     }
     
+    
+    
     override func setUpWithError() throws {
         // Set up your view controller and table view here
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -40,6 +42,14 @@ final class NewsTimeAppTests: XCTestCase {
             tableView = nil
         }
         
+    
+    
+    
+    func test_Fetch_news() {
+        newsViewModel.getNews()
+        XCTAssertGreaterThan(newsViewModel.newsData.articles.count, 0, "News should be fetched and stored")
+        }
+    
         // Test the number of rows in the table view
     
     
