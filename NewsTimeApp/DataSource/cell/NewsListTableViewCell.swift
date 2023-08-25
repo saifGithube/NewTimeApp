@@ -69,8 +69,7 @@ class NewsListTableViewCell: UITableViewCell {
     func configure(article  :  Article?) {
         titleLabel.text = article?.title
         if  var url = article?.urlToImage {
-            
-           
+            print("url is here:",url)
             if url == ""{
                     newsImageView.image = UIImage(named: "default")
                 

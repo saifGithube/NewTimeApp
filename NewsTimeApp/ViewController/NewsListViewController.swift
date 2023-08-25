@@ -62,7 +62,7 @@ class NewsListViewController: UIViewController {
         self.newsViewModel.bindNewsErrorViewModelToController = {
             
             DispatchQueue.main.async {
-                ErrorManger.shared.showAlert(title:"Error" , message: self.newsViewModel.newsErrorData.message ?? "", viewController: self)
+                ErrorManger.shared.showAlert(title:self.newsViewModel.newsErrorData.status ?? "Error" , message: self.newsViewModel.newsErrorData.message ?? "", viewController: self)
 
             }
         }

@@ -138,10 +138,8 @@ class NewsDetailsViewController: UIViewController {
          sourceLabel.text = newDetailsViewModel.source
          
         if var url = newDetailsViewModel?.imageURL {
-            print("url :",url)
             if url == "" {
                 imageView.image = UIImage(named: "default")
-
             }else{
                 ImageManager.setImage(&url, targetImageView: imageView)
 
