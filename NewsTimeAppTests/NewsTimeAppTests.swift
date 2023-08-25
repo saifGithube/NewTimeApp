@@ -21,6 +21,7 @@ final class NewsTimeAppTests: XCTestCase {
     override func setUp()  {
         super.setUp()
         newsViewModel = NewsViewModel()
+    
     }
     
     
@@ -32,8 +33,7 @@ final class NewsTimeAppTests: XCTestCase {
         tableView = newsListViewController.newsTableView
         newsViewModel = newsListViewController.newsViewModel
         newsListViewController.loadViewIfNeeded()
-        
-
+    
     }
         
         override func tearDownWithError() throws {
@@ -44,16 +44,15 @@ final class NewsTimeAppTests: XCTestCase {
         
     
     
-    
+    // fetch data from here
     func test_Fetch_news() {
         newsViewModel.getNews()
+        
         XCTAssertGreaterThan(newsViewModel.newsData.articles.count, 0, "News should be fetched and stored")
         }
     
         // Test the number of rows in the table view
-    
-    
-    
+
     
         func test_number_of_rows_in_section() {
         

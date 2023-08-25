@@ -9,9 +9,14 @@ import XCTest
 
 final class NewsTimeAppUITests: XCTestCase {
 
+    var app: XCUIApplication!
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
+        app = XCUIApplication()
+              app.launch()
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -38,4 +43,16 @@ final class NewsTimeAppUITests: XCTestCase {
             }
         }
     }
+    
+    
+    func testTapCellToNavigate() throws {
+           // Assuming you have a cell with an identifier "newsCell"
+           let cell = app.tables.cells["NewsListTableViewCell"].firstMatch
+           XCTAssertTrue(cell.waitForExistence(timeout: 5), "News cell not found")
+
+           cell.tap()
+
+           // Verify that the navigation bar of the details view exists
+           XCTAssertTrue(app.navigationBars["NewsDetailsViewController"].waitForExistence(timeout: 5), "Navigation to details failed")
+       }
 }
