@@ -39,7 +39,7 @@ public final class APIService {
                 }
             } else if let error = error {
                 print("Error fetching data: \(error)")
-                completion(.failure(NewsModelError(status: nil, message: nil, error: "NetworkError", data: nil)))
+                completion(.failure(NewsModelError(status: nil, message: nil, error: error.localizedDescription, data: nil)))
             }
         }.resume()
     }

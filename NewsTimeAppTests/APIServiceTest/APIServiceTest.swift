@@ -18,7 +18,6 @@ class APIServiceTest : XCTest {
 
     func test_entry_point_url(){
         
-        let const = Constants()
         
         XCTAssertEqual(Constants.URL, "https://newsapi.org/v2/everything")
         

@@ -11,7 +11,6 @@ import Foundation
 // MARK: - News Error
 
 struct NewsModelError: Codable, Error {  // Conform to the Error protocol
-    var status, message: String?
-    var error: String?
+    var status, message,error: String?
     var data: [String: String]?
 }
