@@ -11,7 +11,7 @@ import Foundation
 class NewsViewModel : ObservableObject{
     
     @Published var news : NewsModel!
-    private var apiService : NewsViewModelDelegate
+    private var apiService : NewsServiceModelDelegate
    // in case of error we perform this action
     var onError: ((NewsModelError) -> Void)?
     // bind the data to the ViewConrtroller
@@ -21,9 +21,8 @@ class NewsViewModel : ObservableObject{
 
     
     
-    
-    init(apiService : NewsViewModelDelegate = APIService()) {
-        self.apiService = apiService 
+    init(apiService : NewsServiceModelDelegate = APIService()) {
+        self.apiService = apiService
             getNews()
         }
 

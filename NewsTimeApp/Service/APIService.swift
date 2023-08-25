@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - this call is to retrieve the  data
 
-public final class APIService :NewsViewModelDelegate {
+public final class APIService :NewsServiceModelDelegate {
 
     
     private var apiKey = "fb52d3d0c501459eabbb1418a7f3c4bb"

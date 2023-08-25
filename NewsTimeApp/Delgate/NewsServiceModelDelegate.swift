@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NewsViewModelDelegate {
+protocol NewsServiceModelDelegate {
     
     func apiToGetNewsData(completion : @escaping (Result<NewsModel, NewsModelError>) -> ())
 }
