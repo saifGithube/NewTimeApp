@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - NewsViewModel  class for the newCall
 class NewsViewModel {
-    var news: NewsModel?
+    @Published var news: NewsModel!
     private var apiService : APIService!
    // in case of error we perform this action
     var onError: ((NewsModelError) -> Void)?
@@ -46,6 +46,7 @@ class NewsViewModel {
                 case .success(let newsModel):
                     // Handle the successful case with the newsModel
                 self.newsData = newsModel
+                self.news = newsModel
                 case .failure(let errorModel):
                 self.onError?(errorModel)
                 self.newsErrorData = errorModel
