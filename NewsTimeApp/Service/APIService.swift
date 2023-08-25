@@ -12,7 +12,6 @@ import Foundation
 public final class APIService :NewsViewModelDelegate {
 
     
-    
     private var apiKey = "fb52d3d0c501459eabbb1418a7f3c4bb"
     private var sourcesURL: URL {
         var components = URLComponents(string: Constants.URL)!
@@ -24,9 +23,6 @@ public final class APIService :NewsViewModelDelegate {
         return components.url!
     }
 
-//    init(apiUrl : String?){
-//        self.apiKey = apiUrl ?? ""
-//    }
     
     func apiToGetNewsData(completion: @escaping (Result<NewsModel, NewsModelError>) -> ()) {
         URLSession.shared.dataTask(with: sourcesURL) { data, response, error in

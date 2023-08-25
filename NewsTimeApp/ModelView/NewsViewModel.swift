@@ -21,8 +21,9 @@ class NewsViewModel : ObservableObject{
 
     
     
-        init() {
-            self.apiService = APIService()
+    
+    init(apiService : NewsViewModelDelegate = APIService()) {
+        self.apiService = apiService as? APIService
             getNews()
         }
 
