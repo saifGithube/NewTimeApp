@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UITapGestureRecognizer {
+  
     func attributedTextRange(in label: UILabel) -> NSRange? {
         guard let attributedText = label.attributedText else {
             return nil
