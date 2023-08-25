@@ -10,7 +10,7 @@ import Foundation
 // MARK: - NewsViewModel  class for the newCall
 class NewsViewModel : ObservableObject{
     
-    @Published var news: NewsModel!
+    @Published var news : NewsModel!
     private var apiService : APIService!
    // in case of error we perform this action
     var onError: ((NewsModelError) -> Void)?
@@ -19,6 +19,7 @@ class NewsViewModel : ObservableObject{
     // bind and send the error data to the viewController
     var bindNewsErrorViewModelToController : (() -> ()) = {}
 
+    
     
         init() {
             self.apiService = APIService()

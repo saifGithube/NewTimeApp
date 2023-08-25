@@ -32,7 +32,7 @@ extension NewsListViewController : UITableViewDelegate,UITableViewDataSource {
     
 
         let detailVC = NewsDetailsViewController()
-        let detailViewModel = NewsDetailViewModel(article: newsViewModel.news.articles[indexPath.row] )
+        let detailViewModel = NewsDetailViewModel(article: self.newsViewModel.news.articles[indexPath.row] )
         detailVC.newDetailsViewModel = detailViewModel
         
         navigationController?.pushViewController(detailVC, animated: true)

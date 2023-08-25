@@ -35,7 +35,8 @@ final class NewsTimeAppTests: XCTestCase {
         tableView = newsListViewController.newsTableView
         newsViewModel = newsListViewController.newsViewModel
         newsListViewController.loadViewIfNeeded()
-    
+
+      //  newsDetailsViewController.loadViewIfNeeded()
     }
         
         override func tearDownWithError() throws {
