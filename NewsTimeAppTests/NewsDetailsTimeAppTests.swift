@@ -18,7 +18,6 @@ class NewsDetailsViewControllerTests: XCTestCase {
         // Create a mock navigation controller to capture pushed view controllers
         let mockNavController = MockNavigationController(rootViewController: listViewController)
         
-        UIApplication.shared.keyWindow?.rootViewController = mockNavController
         
         let indexPathToTap = IndexPath(row: 0, section: 0)
         
@@ -30,6 +29,8 @@ class NewsDetailsViewControllerTests: XCTestCase {
         let detailsViewController = mockNavController.pushedViewController as! NewsDetailsViewController
         
         
+        XCTAssertTrue(mockNavController.pushedViewController is NewsDetailsViewController)
+
         XCTAssertEqual(detailsViewController.article.title, mockNavController.title)
         XCTAssertEqual(detailsViewController.article.description, mockNavController.description)
     }

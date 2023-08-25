@@ -57,7 +57,9 @@ class NewsViewModel {
     }
     
     func numberOfItems() -> Int? {
-        return self.newsData.articles.count 
+        
+            return self.newsData.articles.count
+      
         }
     
     func item(at index: Int) -> Article? {

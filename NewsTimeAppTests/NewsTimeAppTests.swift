@@ -138,7 +138,9 @@ final class NewsTimeAppTests: XCTestCase {
            XCTAssertNotNil(article)
         XCTAssertEqual(article?.title, self.newsViewModel.newsData.articles[0].title)
        }
-
+    
+  
+    
 }
 
 

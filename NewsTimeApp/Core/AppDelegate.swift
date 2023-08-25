@@ -27,9 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().backgroundColor = UIColor.blackColor
         
-        let rootViewController = NavigationManger.rootController()
-        window?.rootViewController = rootViewController
-            window?.makeKeyAndVisible()
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+            
+            let rootViewController = NavigationManger.rootController()
+            window?.rootViewController = rootViewController
+                window?.makeKeyAndVisible()
+        }
+        
 
         return true
     }
