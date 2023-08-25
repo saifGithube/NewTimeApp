@@ -45,7 +45,7 @@ final class NewsTimeAppUITests: XCTestCase {
     }
     
     
-    func testTapCellToNavigate() throws {
+    func test_tap_cell_toNavigate() throws {
            // Assuming you have a cell with an identifier "newsCell"
         let cell = app.tables.cells["NewsListTableViewCell"].firstMatch
         
